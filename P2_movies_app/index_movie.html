@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input {
+            width: 20em;
+        }
+        th, td {
+            width: 17em;
+        }
+
+        table td,
+        table th {
+            border: 1px solid silver;
+        }
+
+        .headerSortDown:after,
+        .headerSortUp:after {
+            content: ' ';
+            position: relative;
+            left: 2px;
+            border: 8px solid transparent;
+        }
+
+        .headerSortDown:after {
+            top: 10px;
+            border-top-color: silver;
+        }
+
+        .headerSortUp:after {
+            bottom: 15px;
+            border-bottom-color: silver;
+        }
+    </style>
+</head>
+<body>
+    <form id="movie-form">
+        <input name="movie-name" placeholder="Movie Name" type="text" minlength="2">
+        <input name="rating" placeholder="Rating" type="number" min="1" max="10">
+        <button id="submit">Submit</button>
+    </form>
+    <table id="movies-container">
+        <thead>
+            <tr>
+                <th class="arrow headerSortDown" align="left" id="title">Movie Name</th>
+                <th class="arrow headerSortDown" align="left" id="rating">Rating</th>
+                <th align="left">Delete</th>
+            </tr>
+        </thead>
+        <tbody id="movie-body">
+
+        </tbody>
+    </table>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="movies.js"></script>
+</body>
+</html>
